@@ -26,12 +26,21 @@ function shuffleChildren(parent) {
     }
 }
 
-function showReaction(type, validBox){
+function showReaction(type, validBox) {
     validBox.classList.add(type)
-    if(type !=="success"){
-        setTimeout(function(){
+    if (type !== "success") {
+        setTimeout(function () {
             validBox.classList.remove(type)
         }, 800)
+    }
+}
+//////////////////////////////////////////////////Pour reset le jeu après une victoire
+function resetAuto() {
+    if (nb == board.children.length) {
+        nb = 1
+        board.querySelectorAll(".box-valid").forEach(function (validBox) {
+            validBox.classList.remove("box-valid")
+        })
     }
 }
 
@@ -80,12 +89,11 @@ for (let i = 1; i <= 9; i++) {
             //A
             if (nb == board.children.length) {
                 //alert("VICTOIRE !")
-                board.querySelectorAll(".box").forEach(function(box){
+                board.querySelectorAll(".box").forEach(function (box) {
                     showReaction("success", box)
                 })
-
             }                                        //A : si nb est égal au nombre de boites du jeu, c'est que le dernier clic était sur la dernière boite
-            nb++                             //////////-> Victoire du joueur Il ne faut pas incrémenter nb avant       
+            nb++                                //////////-> Victoire du joueur Il ne faut pas incrémenter nb avant       
         }   //B                                      //B : si le numéro de la boite est supérieur à nb, c'est que le joueur a cliqué une boite trop élevée
         else if (i > nb) {                      ///////////-> Game Over
             //alert("Erreur, recommencez !")
@@ -96,17 +104,18 @@ for (let i = 1; i <= 9; i++) {
             })
         }   //C                                      //C : dernière possibilité : le joueur a cliqué sur une boite déjà grisée. On l'informe sans redémarrer le jeu
         else {
-           // alert("Case déjà cliquée !")
-           showReaction("notice", newbox)
+            // alert("Case déjà cliquée !")
+            showReaction("notice", newbox)
         }
 
     })
 
 }
 
-//ETAPE 6.2 Matérialiser la fonction
+//ETAPE 6.2 Matérialiser les fonctions
 
 shuffleChildren(board)
+resetAuto()
 
 //ETAPE 5
 
@@ -158,22 +167,22 @@ shuffleChildren(board)
 
 //  1   Ajouter des animations dans le CSS
 
-//  2   Utiliser la fonction showReaction dans le JS pour supprimer les boites de dialogue 
+//  2   Utiliser la fonction showReaction dans le JS pour supprimer les boites de dialogue
 
-// Lorsque l'utilisateur provoquera un clic sur une boite, la fonction showReaction() sera 
-// appelée pour provoquer une réaction visuelle sur cette même boite. Les réactions sont les 
+// Lorsque l'utilisateur provoquera un clic sur une boite, la fonction showReaction() sera
+// appelée pour provoquer une réaction visuelle sur cette même boite. Les réactions sont les
 // suivantes :
 
 // error : la boite cliquée est invalide (affichage en rouge)
 // notice : la boite cliquée l'avait déjà été auparavant (affichage en bleu)
 // success : la boite cliquée est valide et était la dernière, la partie est gagnée (affichage en vert)
 
-// La fonction attend deux arguments : 
+// La fonction attend deux arguments :
 // type (une chaine de caractères) correspondant au type de réaction souhaité
 // validBox (HTMLElement) étant la boite sur laquelle l'effet sera appliqué
 
-// La fonction applique donc la classe CSS "type" (error, success ou notice) à la boite passée 
-// en argument (ligne 30). 
+// La fonction applique donc la classe CSS "type" (error, success ou notice) à la boite passée
+// en argument (ligne 30).
 
 //  ->Ecrire la fonction en dessous de la fonction shuffleChildren
 //  ->Placer les appels à la fonction dans chaque conditions remplacer alert par showReaction
@@ -184,7 +193,7 @@ shuffleChildren(board)
 
 //Demander le nombre de boites de départ au joueur (en utilisant prompt())
 
-//Remélanger les boites en cas d'erreur, ainsi le joueur ne pourra plus compter sur sa mémoire visuelle. 
+//Remélanger les boites en cas d'erreur, ainsi le joueur ne pourra plus compter sur sa mémoire visuelle.
 
 //On peut aussi penser à remélanger les boites à chaque clic valide, rendant le jeu plus difficile.
 
