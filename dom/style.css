@@ -1,0 +1,53 @@
+#board {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*Pour améliorer la forme des boites*/
+
+.box {
+    width: 75px;
+    height: 75px;
+    border: 1px solid black;
+    background-color: rgb(212, 250, 76);
+    font-size: 3em;
+    text-align: center;
+    line-height: 75px;
+    margin: 5px;
+    animation: appear 1s;
+    border-radius: 6px;
+
+    /*Changer le curseur (effet click)*/
+    cursor: pointer;
+
+    /*Pour animer le changement de couleur*/
+    transition: background-color 0.8s, color 0.8s, transform 0.8s;
+}
+
+/*Change la couleur de la boite quand celle-ci est sélectionée au click*/
+
+.box-valid {
+    background-color: #ccc;
+    color: #aaa;
+
+    /*Pour réduire la taille de 20%*/
+    transform: scale(0.8);
+}
+
+/*Change la couleur du chiffre de la boite suivant les conditions*/
+
+.box.error{ color: red; background-color: rgb(255, 160, 190);}
+.box.success{ color: green; background-color: rgb(172, 251, 172);}
+.box.notice{ color: blue; background-color: rgb(184, 217, 255); cursor: not-allowed;}
+
+/*Animation des boites au rafraichissment de la page web*/
+
+@keyframes appear {
+    from {
+        transform: scale(0) rotate(180deg)
+    }
+
+    to {
+        transform: scale(1) rotate(0deg)
+    }
+}
