@@ -36,9 +36,21 @@
 
 /*Change la couleur du chiffre de la boite suivant les conditions*/
 
-.box.error{ color: red; background-color: rgb(255, 160, 190);}
-.box.success{ color: green; background-color: rgb(172, 251, 172);}
-.box.notice{ color: blue; background-color: rgb(184, 217, 255); cursor: not-allowed;}
+.box.error {
+    color: red;
+    background-color: rgb(255, 160, 190);
+}
+
+.box.success {
+    color: green;
+    background-color: rgb(172, 251, 172);
+}
+
+.box.notice {
+    color: blue;
+    background-color: rgb(184, 217, 255);
+    cursor: not-allowed;
+}
 
 /*Animation des boites au rafraichissment de la page web*/
 
@@ -49,5 +61,43 @@
 
     to {
         transform: scale(1) rotate(0deg)
+    }
+}
+
+/*TELEPHONE*/
+@media only screen and (max-width:600px) {
+
+
+    h1,
+    ul {
+        display: none;
+    }
+
+    h2 {
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 2.5em;
+        font-weight: bold;
+        padding-top: 20px;
+    }
+
+    #board {
+        justify-content: center;
+        padding-top: 20px;
+
+    }
+
+    .box {
+        width: 115px;
+        height: 115px;
+        background-color: gray;
+        border: none;
+        box-shadow: 6px 6px 6px rgba(0,0,0);
+        font-size: 3em;
+        margin: 6px;
+        font-weight: bold;
+        font-family: 'Courier New', Courier, monospace;
+        text-align: center;
+        line-height: 115px;
     }
 }

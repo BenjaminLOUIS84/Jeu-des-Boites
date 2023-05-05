@@ -67,7 +67,7 @@ let nb = 1
 
 //ETAPE 4
 
-for (let i = 1; i <= 10; i++) {
+for (let i = 1; i <= 9; i++) {
     const newbox = box.cloneNode()
     newbox.innerText = i
     board.appendChild(newbox)
