@@ -180,6 +180,16 @@ shuffleChildren(board)
 //  ->Dans le CSS créer les améliorations correspondantes .box.error - .box.success  et .box.notice
 
 
+////////////////////////////////////////////////A FAIRE/////////////////////////////////////////////////////
+
+//Demander le nombre de boites de départ au joueur (en utilisant prompt())
+
+//Remélanger les boites en cas d'erreur, ainsi le joueur ne pourra plus compter sur sa mémoire visuelle. 
+
+//On peut aussi penser à remélanger les boites à chaque clic valide, rendant le jeu plus difficile.
+
+//Incorporer un timer qui prendrait fin à la validation de toutes les boites.
+//En imaginant conserver d'une partie à l'autre les meilleurs temps, cela apporterait au jeu un petit côté "high score" intéressant
 
 
 
