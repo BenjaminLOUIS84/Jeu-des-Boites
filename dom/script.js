@@ -34,15 +34,6 @@ function showReaction(type, validBox) {
         }, 800)
     }
 }
-//////////////////////////////////////////////////Pour reset le jeu après une victoire
-function resetAuto() {
-    if (nb == board.children.length) {
-        nb = 1
-        board.querySelectorAll(".box-valid").forEach(function (validBox) {
-            validBox.classList.remove("box-valid")
-        })
-    }
-}
 
 //ETAPE 1
 
@@ -112,10 +103,29 @@ for (let i = 1; i <= 9; i++) {
 
 }
 
+//  ETAPE   3.1   Créer un bouton Reset
+
+const box8 = document.createElement("div")
+
+box8.classList.add("button")
+
+const board3 = document.querySelector("#reset")
+
+board3.appendChild(box8)
+
+box8.innerText = "RECOMMANCER"// Pour inscrire du texte dans un noeud
+
+box8.addEventListener("click", function () {
+    console.log("Bouton" + "click!")
+
+    location.reload()//Pour reset le jeu
+
+})
+
 //ETAPE 6.2 Matérialiser les fonctions
 
 shuffleChildren(board)
-resetAuto()
+
 
 //ETAPE 5
 
