@@ -142,7 +142,7 @@
 
     .button {
         margin: auto;
-        background: linear-gradient(black, gray);
+        background: linear-gradient(white, gray);
     }
 
     .button:hover {
