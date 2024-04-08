@@ -3,6 +3,22 @@
     flex-wrap: wrap;
 }
 
+.link {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: red;
+}
+
+a:hover {
+    font-weight: bold;
+    color: black;
+}
+
 /*Pour améliorer la forme des boites*/
 
 .box {
@@ -105,6 +121,17 @@
 @media only screen and (max-width:600px) {
 
 
+    a {
+        text-decoration: none;
+        color: black;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    a:hover {
+        font-weight: bold;
+        color: gray;
+    }
+
     h1,
     ul {
         display: none;
@@ -151,5 +178,5 @@
         color: black;
         font-weight: bold;
     }
-    
+
 }
